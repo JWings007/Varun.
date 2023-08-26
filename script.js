@@ -16,8 +16,15 @@ const hobby7 = document.querySelector(".codingVideo")
 const hobby8 = document.querySelector(".gamingVideo")
 const hobby9 = document.querySelector(".gaming-label")
 const hobby10 = document.querySelector(".para3")
-
+const theForm = document.querySelector(".main-form")
+const submitBtn = document.querySelector(".submit");
 const topNavigate = document.querySelector(".topNavigate")
+const checkMark = document.querySelector(".svgg")
+const fname = document.querySelector("#name-input")
+const femail = document.querySelector("#email-input")
+const fmessage = document.querySelector("#message-input")
+
+// --------VIDEO PLAY/PAUSE--------
 
 playPause.addEventListener("click", function() {
     if (Mv.paused) {
@@ -29,6 +36,9 @@ playPause.addEventListener("click", function() {
         playPause.innerHTML = "Play";
         }
 })
+
+
+// --------LOADER--------
 
 setInterval(() => {
     loader.style.opacity = "0%";
@@ -49,6 +59,9 @@ function hobbyA(element, motion, time) {
     }
 }
 
+
+// ----------ANIMATIONS----------
+
 document.addEventListener("scroll", ()=> {
     console.log(window.scrollY);
 
@@ -63,52 +76,63 @@ document.addEventListener("scroll", ()=> {
     
     // -------LOCATION ANIMATION-------
 
-    if(window.scrollY > 200){
-        loc.classList.add("right-side")
-        map1.classList.add("scale")
-        map2.classList.add("left-side")
-        map3.classList.add("left-side")
-    }
-    else {
-        loc.classList.remove("right-side")
-        map1.classList.remove("scale")
-        map2.classList.remove("left-side")
-        map3.classList.remove("left-side")
-    }
+
+    hobbyA(loc, "right-side", 200)
+    hobbyA(map1, "scale", 200)
+    hobbyA(map2, "left-side", 200)
+    hobbyA(map3, "left-side", 200)
 
 
-
-    if(window.scrollY > 800){
-        hobby1.classList.add("right-side")
-        hobby2.classList.add("left-side")
-        hobby3.classList.add("right-side")
-        hobby4.classList.add("right-side")
-    }
-    else {
-        hobby1.classList.remove("right-side")
-        hobby2.classList.remove("left-side")
-        hobby3.classList.remove("right-side")
-        hobby4.classList.remove("right-side")
-    }
-
-        hobbyA(hobby5, "left-side", 1200)
-        hobbyA(hobby6, "left-side", 1200)
-        hobbyA(hobby7, "left-side", 1200)
+    // -------HOBBIES ANIMATION-------
 
 
-        hobbyA(hobby8, "right-side", 1600)
-        hobbyA(hobby9, "left-side", 1600)
-        hobbyA(hobby10, "left-side", 1600)
+    hobbyA(hobby1, "right-side", 800)
+    hobbyA(hobby2, "left-side", 800)
+    hobbyA(hobby3, "right-side", 800)
+    hobbyA(hobby4, "right-side", 800)
 
 
-        if(window.scrollY > 640) {
+    hobbyA(hobby5, "left-side", 1200)
+    hobbyA(hobby6, "left-side", 1200)
+    hobbyA(hobby7, "left-side", 1200)
+
+
+    hobbyA(hobby8, "right-side", 1600)
+    hobbyA(hobby9, "left-side", 1600)
+    hobbyA(hobby10, "left-side", 1600)
+
+    // -------TOP NAVIGATE------
+
+    if(window.scrollY > 640) {
             topNavigate.style.display = "block"
-        }
-        else {
+    }
+    else {
             topNavigate.style.display = "none"
+    }
+
+
+})
+
+// ---------FORM DATA---------
+
+theForm.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    let data = new FormData(theForm);
+    submitBtn.innerHTML = "Submitting..."
+    fetch("https://script.google.com/macros/s/AKfycbwZxzuVkww7ZOPil_JWx57PpWjvt1zpCpr665cpGYPIlKeRHVgL1tsCxFomo9krUfhi/exec",{method: "POST", body: data} )
+    .then(res => res.text())
+    .then(data => {
+        if(data === "Success") {
+            console.log(data);
+            checkMark.style.display = "block"
+            var start = setInterval(function() {
+                submitBtn.innerHTML = "SUBMIT"
+                checkMark.style.display = "none"
+                theForm.reset();
+                clearInterval(start);
+            }, 3000)
         }
-
-
+    });
 })
 
 

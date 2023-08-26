@@ -104,7 +104,7 @@ html {
     align-items: center;
     justify-content: center;
     font-family: 'Nunito Sans', sans-serif;
-    z-index: 999;
+    z-index: 9999;
     overflow: hidden;
     transition: all 1s ease;
 }
@@ -349,7 +349,7 @@ html {
 .hobbies-container {
     width: 100%;
     position: relative;
-    height: 210vh;
+    height: 1300px;
     overflow: hidden;
 }
 
@@ -552,6 +552,183 @@ html {
     right: 100px;
 }
 
+
+/* -------CONTACT------- */
+
+.contact-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.contact-container h1 {
+    height: 20%;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    font-size: 75px;
+}
+
+.contact-links {
+    padding: 10px 0;
+}
+
+.contact-links i {
+    font-size: 25px;
+}
+
+.contact-container h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+.contact-container p {
+    color: white;
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+hr {
+    width: 250px;
+}
+
+.main-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.main-container button {
+    width: 300px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 20px;
+}
+
+.main-container button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: block;
+    top: 0;
+    transform: translateX(-300px);
+    transition: transform .5s ease;
+    z-index: -1;
+}
+
+.main-container button:hover {
+    cursor: pointer;
+}
+
+.main-container button:hover::before {
+    transform: translateY(0);
+}
+
+input {
+    position: relative;
+    font-weight: 100;
+    outline: none;
+    width: 300px;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.07);
+    margin-bottom: 30px;
+    padding-left: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.input1, .input2, .input3 {
+    position: relative;
+}
+
+textarea {
+    font-weight: 100;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 9px; 
+    color: white;
+}
+
+.label-name, .label-email, .label-message {
+    position: absolute;
+    left: 20px;
+    top: 9px;
+    color: white;
+    transition: transform .1s ease-in;
+    background-color: transparent;
+    padding: 0 4px;
+    border-radius: 5px;
+    font-weight: 100;
+}
+
+.input1 input:focus, .input2 input:focus, textarea:focus {
+    border: 2px solid red;
+    background-color: transparent;
+}
+
+.input1 input:valid, .input2 input:valid, textarea:valid {
+    border: 1px solid gray;
+    background-color: transparent;
+}
+
+.input1 input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 12px;
+    background-color: black;
+}
+
+.input2 input:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 12px;
+    background-color: black;
+}
+
+textarea:valid ~ label {
+    transform: translateY(-20px);
+    font-size: 12px;
+    background-color: black;
+}
+
+.input1 input:focus ~ label {
+    transform: translateY(-20px);
+    background-color: black;
+    font-size: 12px;
+}
+
+.input2 input:focus ~ label {
+    transform: translateY(-20px);
+    background-color: black;
+    font-size: 12px;
+}
+
+textarea:focus ~ label {
+    transform: translateY(-20px);
+    background-color: black;
+    font-size: 12px;
+}
+
+
 /* -------FOOTER------- */
 
 
@@ -567,6 +744,7 @@ html {
 
 .footer h1 {
     color: white;
+    font-size: 25px;
 }
 
 .footer h1 span {
@@ -632,6 +810,8 @@ html {
 }
 
 
+/* -------RESPONSIVENESS------ */
+
 .deviceRestriction {
     display: none;
 }
@@ -674,4 +854,69 @@ html {
     .deviceRestriction p {
         text-align: center;
     }
+}
+
+
+/* -------CHECKMARK ANIMATION-------- */
+
+.btn {
+    position: relative;
+}
+
+.svgg {
+    display: none;
+}
+
+
+.checkmark {
+    position: absolute;
+    top: 2px;
+    right: -75px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: white;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #00f300;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #00f300;
+  fill: none;
+  animation: stroke .6s cubic-bezier(0.650, 0.000, 0.450, 1.000) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s cubic-bezier(0.650, 0.000, 0.450, 1.000) .8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #00f300;
+  }
 }

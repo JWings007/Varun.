@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Varun.</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
     <script
       src="https://kit.fontawesome.com/46bc4b59ea.js"
       crossorigin="anonymous"
@@ -29,7 +30,7 @@
           <li><a href="#home">HOME</a></li>
           <li><a href="#loc">FIND ME</a></li>
           <li><a href="#hobbies">HOBBIES</a></li>
-          <!-- <li><a href="">PROJECTS</a></li> -->
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
       </div>
 
@@ -49,7 +50,7 @@
           </div>
         </div>
         <div class="image" id="home">
-          <img src="image.png" alt="" />
+          <img src="assets/images/image.png" alt="" />
         </div>
       </div>
 
@@ -57,7 +58,7 @@
         <h1 class="im-text head">Im</h1>
         <h1 class="here-text head">Here</h1>
         <h2 class="marker-text head">There i am<span>.</span></h2>
-        <img class="marker-img" src="marker.png" alt="" />
+        <img class="marker-img" src="assets/images/marker.png" alt="" />
         <div class="map-container">
           <iframe
             class="map"
@@ -74,11 +75,11 @@
           <h1 class="head">I live in<span>.</span></h1>
           <h3 class="head">Halagur, Malavalli</h3>
           <h3 class="head">Mandya - 571421</h3>
-          <button>
-            <a href="https://goo.gl/maps/D5RvZVTzZsy1foPm9" target="_blank"
-              ><i class="fa-solid fa-arrow-left" id="location-arrow"></i
-            ></a>
-          </button>
+          <a href="https://goo.gl/maps/D5RvZVTzZsy1foPm9" target="_blank">
+            <button>
+              <i class="fa-solid fa-arrow-left" id="location-arrow"></i>
+            </button>
+          </a>
         </div>
       </div>
 
@@ -88,7 +89,7 @@
           <h1 class="label1 head">K-POP</h1>
           <h1 class="label5 head">블랙핑크</h1>
           <div class="video-container">
-            <video class="MV" src="musicVideo.mp4" loop></video>
+            <video class="MV" src="assets/videos/musicVideo.mp4" loop></video>
           </div>
           <button class="ppBtn">Play</button>
           <h1 class="music-label head">“Where words fail, music speaks.”</h1>
@@ -108,7 +109,7 @@
           <div class="coding-container">
             <video
               class="codingVideo"
-              src="coding.mp4"
+              src="assets/videos/coding.mp4"
               autoplay
               muted
               loop
@@ -130,7 +131,7 @@
           <div class="gaming-container">
             <video
               class="gamingVideo"
-              src="gaming.mp4"
+              src="assets/videos/gaming.mp4"
               autoplay
               muted
               loop
@@ -138,10 +139,98 @@
           </div>
           <h1 class="gaming-label head">“Eat. Sleep. Game. Repeat.”</h1>
           <p class="para3">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
-            mollitia quia unde dolorem neque! Voluptates aspernatur dignissimos
-            officia eum esse!
+            In my free time i play games. BGMI, VALORENT, GTA5 and many more.
+            This is where i meet lot of new friends and join them in some
+            in-game tournaments. Learning is important but gaming is very very
+            important...
           </p>
+        </div>
+      </div>
+
+      <div class="contact-container" id="contact">
+        <h1>Contact<span class="red">.</span></h1>
+        <div class="main-container">
+          <div class="form-container">
+            <form
+              class="main-form"
+              action="https://script.google.com/macros/s/AKfycbwZxzuVkww7ZOPil_JWx57PpWjvt1zpCpr665cpGYPIlKeRHVgL1tsCxFomo9krUfhi/exec"
+            >
+              <div class="input1">
+                <input
+                  type="text"
+                  required="required"
+                  id="name-input"
+                  autocomplete="off"
+                  name="name"
+                />
+                <label for="name-input" class="label-name">Name</label>
+              </div>
+              <div class="input2">
+                <input
+                  type="email"
+                  required="required"
+                  id="email-input"
+                  autocomplete="off"
+                  name="email"
+                />
+                <label for="email-input" class="label-email">Email</label>
+              </div>
+              <div class="input3">
+                <textarea
+                  name="message"
+                  id="message-input"
+                  required="required"
+                  autocomplete="off"
+                  name="message"
+                ></textarea>
+                <label for="message-input" class="label-message">Message</label>
+              </div>
+              <div class="btn">
+                <button type="submit" class="submit">SUBMIT</button>
+                <div class="svgg">
+                  <svg
+                    class="checkmark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 52 52"
+                  >
+                    <circle
+                      class="checkmark__circle"
+                      cx="26"
+                      cy="26"
+                      r="25"
+                      fill="none"
+                    />
+                    <path
+                      class="checkmark__check"
+                      fill="none"
+                      d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="details-container">
+            <h3>Bangalore, Karnataka.</h3>
+            <h3>+91 7022120034</h3>
+            <h3>varun.3112003c@gmail.com</h3>
+            <hr />
+            <div class="social-media contact-links">
+              <a href="https://github.com/JWings007" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.instagram.com/viper_varun/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/varun-c-06a480252/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+            <hr />
+            <p>You can contact me through these links.</p>
+          </div>
         </div>
       </div>
 
@@ -151,6 +240,7 @@
           <li><a href="#home">HOME</a></li>
           <li><a href="#loc">FIND ME</a></li>
           <li><a href="#hobbies">HOBBIES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
         <div class="social-media">
           <a href="https://github.com/JWings007" target="_blank"
@@ -165,10 +255,7 @@
             ><i class="fa-brands fa-linkedin-in"></i
           ></a>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
-          officia?
-        </p>
+        <p>&copy;2023-2024 Varun. | Made with love by varun</p>
         <a href="#home" class="topNavigate"
           ><button><i class="fa-sharp fa-solid fa-arrow-up"></i></button
         ></a>
